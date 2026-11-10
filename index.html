@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CADDIH – Association humanitaire à Garoua, Cameroun</title>
+<meta name="description" content="CADDIH, association humanitaire de Garoua (Cameroun) : volontaires qui assainissent marchés et centres de santé, reboisent, équipent les élèves et tournent des courts métrages de sensibilisation.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="CADDIH">
+<meta property="og:title" content="CADDIH · Nous sensibilisons par les actes">
+<meta property="og:description" content="À Garoua, nos volontaires nettoient, plantent, équipent les élèves et préparent un centre d'accueil pour les femmes vulnérables.">
+<meta property="og:image" content="https://caddih24-code.github.io/Caddih-/img/og-caddih.jpg">
+<meta property="og:url" content="https://caddih24-code.github.io/Caddih-/">
+<link rel="canonical" href="https://caddih24-code.github.io/Caddih-/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600;112,700;112,800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+body{margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout : bandes pleine largeur qui alternent (clair / blanc / noir / bleu), contenu sur 1120 px.
+   Identité : bleu du logo, noir, et jaune fluo des gilets des volontaires comme couleur de signalisation. */
+:root{
+  --bg:#f5f5fa; --surface:#ffffff; --ink:#111220; --muted:#545872; --line:#dcdcea;
+  --blue:#3b3fe5; --blue-ink:#2a2db8; --vest:#d9f43c; --band:#111220; --band-ink:#f2f2f9; --band-muted:#b3b5cc;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --r:6px; --max:1120px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0b14; --surface:#14152a; --ink:#eeeef8; --muted:#a3a6c2; --line:#2a2b45;
+  --blue:#6f72ff; --blue-ink:#a2a4ff; --band:#000000; --band-ink:#eeeef8; --band-muted:#a3a6c2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0b14; --surface:#14152a; --ink:#eeeef8; --muted:#a3a6c2; --line:#2a2b45;
+  --blue:#6f72ff; --blue-ink:#a2a4ff; --band:#000000; --band-ink:#eeeef8; --band-muted:#a3a6c2; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 1.06rem/1.6 var(--body)}
+img{display:block;max-width:100%;height:auto}
+[hidden]{display:none!important}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:112%;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,4.2vw,2.75rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.18rem;font-weight:700}
+p{margin:0}
+a{color:var(--blue-ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--vest);outline-offset:2px;border-radius:4px}
+.eyebrow{font:600 .78rem/1.2 var(--display);font-stretch:100%;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-ink)}
+.muted{color:var(--muted)}
+.logo-l{display:block}.logo-d{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-l{display:none}:root:not([data-theme="light"]) .logo-d{display:block}}
+:root[data-theme="dark"] .logo-l{display:none}:root[data-theme="dark"] .logo-d{display:block}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.bar .brand img{height:30px;width:auto}
+nav{display:flex;align-items:center;gap:20px;font-weight:600;font-size:.96rem}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--blue-ink)}
+.nav-cta{background:var(--blue);color:#fff!important;padding:8px 14px;border-radius:var(--r)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:8px 12px;font:600 .95rem var(--body);cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex;align-items:center;gap:8px}
+  nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);
+      padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 16px}
+  nav a{padding:12px 0;border-bottom:1px solid var(--line)}
+  nav .nav-cta{margin-top:12px;text-align:center;border:0}
+  header:not(.open) nav{display:none}
+}
+
+/* Ouverture */
+.hero{padding-block:clamp(28px,5vw,64px)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,56px);align-items:center}
+.hero-grid>*{min-width:0}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.1rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--blue);display:inline-block;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--vest) 70%,transparent) 62%)}
+.lede{margin-top:20px;font-size:1.16rem;color:var(--muted);max-width:34em}
+.lede b{color:var(--ink);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .98rem var(--display);font-stretch:100%;padding:13px 20px;border-radius:var(--r);text-decoration:none;border:2px solid var(--blue);cursor:pointer}
+.btn-p{background:var(--blue);color:#fff}
+.btn-s{color:var(--blue-ink);background:transparent}
+.btn-v{background:var(--vest);border-color:var(--vest);color:#111220}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.tag{position:absolute;left:14px;bottom:14px;background:var(--vest);color:#111220;font:700 .8rem var(--display);font-stretch:100%;padding:6px 10px;border-radius:4px;letter-spacing:.03em}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-photo{order:-1}}
+
+/* Chiffres */
+.facts{background:var(--band);color:var(--band-ink)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:32px}
+.fact b{display:block;font:800 clamp(2rem,4.2vw,2.8rem)/1 var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
+.fact b span{color:var(--vest);font-size:.55em}
+.fact small{display:block;margin-top:8px;font-size:.95rem;color:var(--band-muted);line-height:1.4}
+@media (max-width:760px){.facts .wrap{grid-template-columns:1fr 1fr}}
+
+section.block{padding-block:clamp(52px,8vw,96px)}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.head{display:grid;gap:12px;max-width:46em;margin-bottom:34px}
+.head p{color:var(--muted);font-size:1.1rem}
+.cap{font-size:.88rem;color:var(--muted);margin-top:6px}
+
+/* Par les actes */
+.places{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;padding:0;list-style:none}
+.places li{border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.95rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair figure{margin:0;position:relative;min-width:0}
+.pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.stamp{position:absolute;top:12px;left:12px;font:800 .78rem var(--display);font-stretch:100%;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:4px}
+.stamp.avant{background:#111220;color:#fff}
+.stamp.pendant{background:var(--vest);color:#111220}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.trio figure{margin:0;min-width:0}
+.trio img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.trio{grid-template-columns:1fr 1fr}.trio figure:last-child{display:none}}
+
+/* Films */
+.films{background:var(--band);color:var(--band-ink)}
+.films .eyebrow{color:var(--vest)}
+.films .head p{color:var(--band-muted)}
+.film-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.film-grid>*{min-width:0}
+.themes{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.16)}
+.themes li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.themes .n{grid-row:span 2;font:800 1rem var(--display);font-stretch:100%;color:#111220;background:var(--vest);width:2.1rem;height:2.1rem;border-radius:50%;display:grid;place-items:center}
+.themes h3{color:var(--band-ink)}
+.themes p{color:var(--band-muted);font-size:.98rem}
+.shoot{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.shoot figure{margin:0;min-width:0}
+.shoot figure:first-child{grid-row:span 2}
+.shoot img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.shoot figure:first-child img{aspect-ratio:3/4.4}
+.shoot figure:not(:first-child) img{aspect-ratio:1/1}
+.films .note{margin-top:22px;color:var(--band-muted);font-size:.98rem}
+.films .btn-s{border-color:var(--vest);color:var(--vest)}
+@media (max-width:860px){.film-grid{grid-template-columns:1fr}}
+
+/* Autres actions */
+.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.axe{display:grid;gap:12px;align-content:start;min-width:0}
+.axe img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.axe .k{font:700 .75rem var(--display);font-stretch:100%;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.axe p{color:var(--muted)}
+@media (max-width:860px){.axes{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.axes{grid-template-columns:1fr}}
+
+/* Bockle */
+.bk-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.bk-top>*{min-width:0}
+.slogan{font:700 clamp(1.25rem,2.5vw,1.7rem)/1.25 var(--display);font-stretch:100%;border-left:6px solid var(--vest);padding-left:16px;margin-top:18px}
+.list{list-style:none;padding:0;margin:14px 0 0;display:grid}
+.list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.list li::before{content:"";flex:0 0 10px;height:10px;margin-top:8px;background:var(--blue);border-radius:2px}
+.plan-fig{margin:0}
+.plan-fig img{width:100%;border-radius:var(--r);border:1px solid var(--line)}
+.views{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.views figure{margin:0;min-width:0}
+.views img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.blocks div{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px;font-size:.9rem;line-height:1.3}
+.blocks b{display:block;font:700 .7rem var(--display);font-stretch:100%;letter-spacing:.1em;color:var(--blue-ink);text-transform:uppercase;margin-bottom:4px}
+.protect{margin-top:22px;padding:14px 16px;border-radius:var(--r);background:var(--bg);border:1px solid var(--line);font-size:.95rem}
+@media (max-width:860px){.bk-top{grid-template-columns:1fr}.views{grid-template-columns:1fr 1fr}.views figure:last-child{display:none}}
+@media (max-width:480px){.blocks{grid-template-columns:1fr 1fr}}
+
+/* Galerie */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:600 .95rem var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal figure{margin:0;min-width:0}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r)}
+.more{margin-top:20px}
+@media (max-width:900px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.gal{grid-template-columns:1fr 1fr}}
+
+/* Transparence */
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:24px;min-width:0}
+dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
+dt{color:var(--muted);font-size:.92rem}
+dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+@media (max-width:760px){.trust{grid-template-columns:1fr}}
+
+/* Rejoindre */
+.join{background:var(--blue);color:#fff}
+.join .wrap{padding-block:clamp(52px,8vw,92px);display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
+.join .wrap>*{min-width:0}
+.join h2{color:#fff}
+.join p{color:rgba(255,255,255,.9);margin-top:14px;font-size:1.1rem}
+.join .eyebrow{color:var(--vest)}
+.ways{display:grid;gap:12px}
+.way{background:rgba(0,0,0,.24);border-radius:var(--r);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.way span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78);display:block}
+.way strong{font:700 1.08rem var(--display);font-stretch:100%;overflow-wrap:anywhere}
+.way a{color:#fff}
+.chip{background:var(--vest);color:#111220;border:0;border-radius:4px;padding:8px 14px;font:700 .9rem var(--body);cursor:pointer;text-decoration:none}
+.share{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.share a,.share button{background:transparent;border:1.5px solid rgba(255,255,255,.7);color:#fff;border-radius:999px;padding:8px 14px;font:600 .92rem var(--body);text-decoration:none;cursor:pointer}
+@media (max-width:760px){.join .wrap{grid-template-columns:1fr}}
+
+/* Bouton flottant (téléphone) */
+.fab{position:fixed;right:max(16px,calc(env(safe-area-inset-right,0px) + 12px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;display:none;
+     background:var(--vest);color:#111220;font:700 .98rem var(--display);font-stretch:100%;padding:13px 18px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.28)}
+@media (max-width:860px){.fab{display:inline-block;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s}.fab.show{opacity:1;pointer-events:auto;transform:none}}
+
+footer{padding-block:28px 96px;font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (min-width:861px){footer{padding-bottom:28px}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#accueil" aria-label="CADDIH, accueil">
+      <img class="logo-l" src="img/logo-light.png" alt="CADDIH" width="600" height="190">
+      <img class="logo-d" src="img/logo-dark.png" alt="CADDIH" width="600" height="190">
+    </a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="#actes">Par les actes</a>
+      <a href="#films">Courts métrages</a>
+      <a href="#actions">Nos actions</a>
+      <a href="#bockle">Centre de Bockle</a>
+      <a href="#galerie">Photos</a>
+      <a class="nav-cta" href="#rejoindre">Nous rejoindre</a>
+    </nav>
+  </div>
+</header>
+
+<main id="accueil">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Association humanitaire · Garoua, Cameroun</p>
+        <h1>Nous sensibilisons <em>par les actes.</em></h1>
+        <p class="lede"><b>CADDIH</b>, Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain, réunit des volontaires qui nettoient les marchés et les centres de santé, plantent des arbres, équipent les élèves vulnérables et tournent des courts métrages pour changer les comportements.</p>
+        <div class="btns">
+          <a class="btn btn-p" href="#rejoindre">Devenir volontaire</a>
+          <a class="btn btn-s" href="#bockle">Soutenir le centre de Bockle</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="img/espace-vert-equipe-640.webp" srcset="img/espace-vert-equipe-640.webp 640w, img/espace-vert-equipe-1200.webp 1200w" sizes="(max-width:860px) 100vw, 560px" width="640" height="477" alt="L&#x27;équipe des volontaires de CADDIH, en gilets fluo, devant le panneau de l&#x27;Espace vert de la commune de Garoua III" fetchpriority="high">
+        <span class="tag">Espace vert · Garoua III</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>207</b><small>élèves équipés à la rentrée 2026, contre 93 en 2025</small></div>
+      <div class="fact"><b>5</b><small>types de lieux assainis : marchés, bâtiments publics, centres de santé, espaces verts, rues</small></div>
+      <div class="fact"><b>3</b><small>thèmes de courts métrages : drogue, reboisement, insalubrité</small></div>
+      <div class="fact"><b>6 750<span> m²</span></b><small>de terrain pour le futur centre d'accueil de Bockle</small></div>
+    </div>
+  </div>
+
+  <section class="block" id="actes">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Sensibiliser par l'exemple</p>
+        <h2>Le meilleur discours, c'est un marché propre</h2>
+        <p>Plutôt que de dire aux habitants ce qu'il faut faire, nos volontaires le font devant eux. Balais, râteaux et brouettes à la main, ils assainissent les lieux que tout le monde partage.</p>
+      </div>
+      <ul class="places" aria-label="Lieux où nous intervenons">
+        <li>Marchés</li><li>Bâtiments publics</li><li>Centres de santé intégrés</li><li>Espaces verts</li><li>Rues et caniveaux</li>
+      </ul>
+      <div class="pair">
+        <figure>
+          <img src="img/marche-avant-640.webp" srcset="img/marche-avant-640.webp 640w, img/marche-avant-1200.webp 1200w" sizes="(max-width:640px) 100vw, 550px" width="640" height="479" alt="Allée d&#x27;un marché couverte de déchets plastiques avant l&#x27;intervention" loading="lazy" decoding="async">
+          <span class="stamp avant">Avant</span>
+        </figure>
+        <figure>
+          <img src="img/marche-pendant-640.webp" srcset="img/marche-pendant-640.webp 640w, img/marche-pendant-1200.webp 1200w" sizes="(max-width:640px) 100vw, 550px" width="640" height="479" alt="Les volontaires rassemblent les déchets du même marché en tas avec des râteaux" loading="lazy" decoding="async">
+          <span class="stamp pendant">Pendant</span>
+        </figure>
+      </div>
+      <p class="cap">Le même marché, avant et pendant le passage des volontaires.</p>
+      <div class="trio">
+        <figure><img src="img/caniveau-640.webp" srcset="img/caniveau-640.webp 640w, img/caniveau-1200.webp 1200w" sizes="(max-width:640px) 50vw, 360px" width="461" height="640" alt="Deux volontaires curent un caniveau rempli de déchets" loading="lazy" decoding="async"><figcaption class="cap">Curage des caniveaux</figcaption></figure>
+        <figure><img src="img/csi-couloir-640.webp" srcset="img/csi-couloir-640.webp 640w, img/csi-couloir-1200.webp 1200w" sizes="(max-width:640px) 50vw, 360px" width="461" height="640" alt="Lavage du couloir d&#x27;un centre de santé intégré" loading="lazy" decoding="async"><figcaption class="cap">Centre de santé intégré</figcaption></figure>
+        <figure><img src="img/batiment-entree-640.webp" srcset="img/batiment-entree-640.webp 640w, img/batiment-entree-1200.webp 1200w" sizes="(max-width:640px) 50vw, 360px" width="481" height="640" alt="Nettoyage de l&#x27;entrée d&#x27;un bâtiment public" loading="lazy" decoding="async"><figcaption class="cap">Bâtiment public</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block films" id="films">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Courts métrages</p>
+        <h2>Nos films de sensibilisation</h2>
+        <p>L'équipe de CADDIH écrit, joue et tourne régulièrement des courts métrages à Garoua, avec les habitants, pour atteindre ceux que les discours ne touchent pas.</p>
+      </div>
+      <div class="film-grid">
+        <div>
+          <ul class="themes">
+            <li><span class="n">1</span><h3>L'addiction à la drogue</h3><p>Montrer aux jeunes où mène la dépendance, et qu'il existe une autre voie.</p></li>
+            <li><span class="n">2</span><h3>Le reboisement</h3><p>Faire comprendre pourquoi chaque arbre planté protège nos terres et notre climat.</p></li>
+            <li><span class="n">3</span><h3>L'insalubrité</h3><p>Relier les déchets dans la rue aux maladies et à la dignité du quartier.</p></li>
+          </ul>
+          <p class="note">D'autres thèmes suivront. Les films seront diffusés sur notre chaîne YouTube et sur notre page Facebook.</p>
+          <div class="btns"><a class="btn btn-s" href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">Voir nos vidéos sur Facebook</a></div>
+        </div>
+        <div class="shoot">
+          <figure><img src="img/tournage-marche-640.webp" srcset="img/tournage-marche-640.webp 640w, img/tournage-marche-1200.webp 1200w" sizes="(max-width:860px) 50vw, 300px" width="480" height="640" alt="Tournage d&#x27;un court métrage de CADDIH au marché, caméra sur stabilisateur" loading="lazy" decoding="async"></figure>
+          <figure><img src="img/tournage-lecture-640.webp" srcset="img/tournage-lecture-640.webp 640w, img/tournage-lecture-1200.webp 1200w" sizes="(max-width:860px) 50vw, 240px" width="480" height="640" alt="Répétition du texte avec les actrices avant une prise" loading="lazy" decoding="async"></figure>
+          <figure><img src="img/tournage-quartier-640.webp" srcset="img/tournage-quartier-640.webp 640w, img/tournage-quartier-1200.webp 1200w" sizes="(max-width:860px) 50vw, 240px" width="480" height="640" alt="Repérage et lecture du scénario dans un quartier, trépied à la main" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="actions">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Nos autres actions</p>
+        <h2>Éduquer, reboiser, soigner la communauté</h2>
+      </div>
+      <div class="axes">
+        <article class="axe">
+          <img src="img/dons-ecole-640.webp" srcset="img/dons-ecole-640.webp 640w, img/dons-ecole-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="480" alt="Remise de kits scolaires à des élèves dans une cour d&#x27;école" loading="lazy" decoding="async">
+          <span class="k">Éducation</span>
+          <h3>Fournitures pour les élèves vulnérables</h3>
+          <p>Chaque rentrée, nous remettons cartables et fournitures aux élèves qui en ont le plus besoin : 93 en 2025, 207 en 2026. Nous visons plus haut l'an prochain.</p>
+        </article>
+        <article class="axe">
+          <img src="img/pepiniere-jeunes-640.webp" srcset="img/pepiniere-jeunes-640.webp 640w, img/pepiniere-jeunes-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="360" alt="Des jeunes volontaires remplissent des sachets de terre pour la pépinière" loading="lazy" decoding="async">
+          <span class="k">Climat</span>
+          <h3>De la pépinière à la colline</h3>
+          <p>Nos volontaires préparent les plants, les remettent aux familles et les mettent en terre sur les terrains dégradés. Les parrainages d'arbres permettent d'étendre chaque campagne.</p>
+        </article>
+        <article class="axe">
+          <img src="img/sensibilisation-babla-640.webp" srcset="img/sensibilisation-babla-640.webp 640w, img/sensibilisation-babla-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="360" alt="Causerie éducative de CADDIH au centre de santé intégré de Babla" loading="lazy" decoding="async">
+          <span class="k">Santé communautaire</span>
+          <h3>Causeries et sensibilisation</h3>
+          <p>Nous animons des causeries avec les femmes et les familles dans les centres de santé, comme à Babla, aux côtés du personnel soignant.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="bockle">
+    <div class="wrap">
+      <div class="bk-top">
+        <div>
+          <p class="eyebrow">Projet phare</p>
+          <h2>Le centre d'accueil CADDIH de Bockle</h2>
+          <p class="slogan">« Berceau de l'espoir : là où renaissent les femmes oubliées »</p>
+          <p class="muted" style="margin-top:18px">Un lieu pour se mettre à l'abri, se soigner, se former et reprendre sa vie en main. Les plans sont prêts ; nous cherchons des partenaires pour construire.</p>
+          <h3 style="margin-top:26px">Pour qui ?</h3>
+          <ul class="list">
+            <li>Filles-mères et jeunes mères vulnérables</li>
+            <li>Femmes victimes de violences</li>
+            <li>Veuves et femmes abandonnées</li>
+            <li>Femmes malades ou en situation de handicap</li>
+          </ul>
+          <h3 style="margin-top:26px">Ce que nous allons bâtir</h3>
+          <div class="blocks" aria-label="Bâtiments prévus">
+            <div><b>Accueil</b>Guérite et bloc administratif</div>
+            <div><b>Vie commune</b>Salle polyvalente</div>
+            <div><b>Santé</b>Infirmerie et propharmacie</div>
+            <div><b>Hébergement</b>Deux dortoirs</div>
+            <div><b>Repas</b>Réfectoire, salle à manger, cuisine</div>
+            <div><b>Logistique</b>Cuisine externe et magasin</div>
+            <div><b>Hygiène</b>Deux blocs toilettes</div>
+            <div><b>Eau</b>Château d'eau</div>
+            <div><b>Site</b>Parking, allées, espaces verts</div>
+          </div>
+        </div>
+        <div>
+          <figure class="plan-fig">
+            <img src="img/bockle-plan-masse-640.webp" srcset="img/bockle-plan-masse-640.webp 640w, img/bockle-plan-masse-1200.webp 1200w" sizes="(max-width:860px) 100vw, 520px" width="495" height="640" alt="Plan de masse du centre de Bockle : bâtiments aux toits orange répartis autour d&#x27;allées et d&#x27;espaces verts, parking à l&#x27;entrée" loading="lazy" decoding="async">
+            <figcaption class="cap">Plan de masse · terrain d'environ 6 750 m² · repère GPS 9,2884° N, 13,4697° E</figcaption>
+          </figure>
+          <p class="protect"><b>Protection des bénéficiaires.</b> Aucune photo ni aucun nom de femme accueillie ne sera publié sans son consentement écrit.</p>
+          <div class="btns"><a class="btn btn-p" href="#rejoindre">Demander le dossier du projet</a></div>
+        </div>
+      </div>
+      <div class="views">
+        <figure><img src="img/bockle-3d-entree-640.webp" srcset="img/bockle-3d-entree-640.webp 640w, img/bockle-3d-entree-1200.webp 1200w" sizes="(max-width:860px) 50vw, 360px" width="640" height="324" alt="Vue 3D de l&#x27;entrée : guérite et panneau au nom de CADDIH" loading="lazy" decoding="async"><figcaption class="cap">Entrée et guérite</figcaption></figure>
+        <figure><img src="img/bockle-3d-vue-640.webp" srcset="img/bockle-3d-vue-640.webp 640w, img/bockle-3d-vue-1200.webp 1200w" sizes="(max-width:860px) 50vw, 360px" width="640" height="334" alt="Vue 3D d&#x27;ensemble du centre avec parking et bâtiments" loading="lazy" decoding="async"><figcaption class="cap">Vue d'ensemble</figcaption></figure>
+        <figure><img src="img/bockle-3d-chateau-640.webp" srcset="img/bockle-3d-chateau-640.webp 640w, img/bockle-3d-chateau-1200.webp 1200w" sizes="(max-width:860px) 50vw, 360px" width="640" height="333" alt="Vue 3D du château d&#x27;eau et des allées entre les bâtiments" loading="lazy" decoding="async"><figcaption class="cap">Château d'eau</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="galerie">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Sur le terrain</p>
+        <h2>Nos volontaires en action</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer les photos">
+        <button type="button" id="f-tout" data-f="tout" aria-pressed="true">Tout</button>
+        <button type="button" id="f-salubrite" data-f="salubrite" aria-pressed="false">Salubrité</button>
+        <button type="button" id="f-climat" data-f="climat" aria-pressed="false">Reboisement</button>
+        <button type="button" id="f-communaute" data-f="communaute" aria-pressed="false">Communauté</button>
+      </div>
+      <div class="gal" id="gal">
+        <figure data-cat="climat"><img src="img/plantation-paysage-640.webp" srcset="img/plantation-paysage-640.webp 640w, img/plantation-paysage-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Plantation face aux collines de la Bénoué" loading="lazy" decoding="async"><figcaption class="cap">Plantation face aux collines de la Bénoué</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/marche-tas-640.webp" srcset="img/marche-tas-640.webp 640w, img/marche-tas-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="479" alt="Ramassage des déchets au marché" loading="lazy" decoding="async"><figcaption class="cap">Ramassage des déchets au marché</figcaption></figure>
+        <figure data-cat="communaute"><img src="img/causerie-sante-640.webp" srcset="img/causerie-sante-640.webp 640w, img/causerie-sante-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Causerie santé avec les femmes" loading="lazy" decoding="async"><figcaption class="cap">Causerie santé avec les femmes</figcaption></figure>
+        <figure data-cat="climat"><img src="img/remise-plants-640.webp" srcset="img/remise-plants-640.webp 640w, img/remise-plants-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Remise de plants aux familles" loading="lazy" decoding="async"><figcaption class="cap">Remise de plants aux familles</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/csi-equipe-640.webp" srcset="img/csi-equipe-640.webp 640w, img/csi-equipe-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="479" alt="Équipe au centre de santé intégré" loading="lazy" decoding="async"><figcaption class="cap">Équipe au centre de santé intégré</figcaption></figure>
+        <figure data-cat="communaute"><img src="img/assemblee-640.webp" srcset="img/assemblee-640.webp 640w, img/assemblee-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Réunion de sensibilisation" loading="lazy" decoding="async"><figcaption class="cap">Réunion de sensibilisation</figcaption></figure>
+        <figure data-cat="climat"><img src="img/plantation-portrait-640.webp" srcset="img/plantation-portrait-640.webp 640w, img/plantation-portrait-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="360" height="640" alt="Mise en terre sur les collines" loading="lazy" decoding="async"><figcaption class="cap">Mise en terre sur les collines</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/brouette-640.webp" srcset="img/brouette-640.webp 640w, img/brouette-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="480" height="640" alt="Évacuation des déchets" loading="lazy" decoding="async"><figcaption class="cap">Évacuation des déchets</figcaption></figure>
+        <figure data-cat="communaute"><img src="img/sensibilisation-micro-640.webp" srcset="img/sensibilisation-micro-640.webp 640w, img/sensibilisation-micro-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Prise de parole devant la communauté" loading="lazy" decoding="async"><figcaption class="cap">Prise de parole devant la communauté</figcaption></figure>
+        <figure data-cat="climat"><img src="img/pepiniere-sachets-640.webp" srcset="img/pepiniere-sachets-640.webp 640w, img/pepiniere-sachets-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Préparation de la pépinière" loading="lazy" decoding="async"><figcaption class="cap">Préparation de la pépinière</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/equipe-marche-640.webp" srcset="img/equipe-marche-640.webp 640w, img/equipe-marche-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="480" alt="Journée de propreté au marché" loading="lazy" decoding="async"><figcaption class="cap">Journée de propreté au marché</figcaption></figure>
+        <figure data-cat="climat"><img src="img/plantation-plant-640.webp" srcset="img/plantation-plant-640.webp 640w, img/plantation-plant-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Planter avec les plus jeunes" loading="lazy" decoding="async"><figcaption class="cap">Planter avec les plus jeunes</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/salubrite-quartier-640.webp" srcset="img/salubrite-quartier-640.webp 640w, img/salubrite-quartier-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Déblaiement d&#x27;une ruelle" loading="lazy" decoding="async"><figcaption class="cap">Déblaiement d'une ruelle</figcaption></figure>
+        <figure data-cat="communaute"><img src="img/reunion-640.webp" srcset="img/reunion-640.webp 640w, img/reunion-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="479" alt="Réunion des membres" loading="lazy" decoding="async"><figcaption class="cap">Réunion des membres</figcaption></figure>
+        <figure data-cat="climat"><img src="img/plantation-champ-640.webp" srcset="img/plantation-champ-640.webp 640w, img/plantation-champ-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Plantation dans la brousse" loading="lazy" decoding="async"><figcaption class="cap">Plantation dans la brousse</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/salle-publique-640.webp" srcset="img/salle-publique-640.webp 640w, img/salle-publique-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="488" alt="Nettoyage d&#x27;une salle publique" loading="lazy" decoding="async"><figcaption class="cap">Nettoyage d'une salle publique</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/centre-sante-640.webp" srcset="img/centre-sante-640.webp 640w, img/centre-sante-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Avec le personnel d&#x27;un centre de santé" loading="lazy" decoding="async"><figcaption class="cap">Avec le personnel d'un centre de santé</figcaption></figure>
+        <figure data-cat="climat"><img src="img/plantation-equipe-640.webp" srcset="img/plantation-equipe-640.webp 640w, img/plantation-equipe-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Mise en terre d&#x27;un plant" loading="lazy" decoding="async"><figcaption class="cap">Mise en terre d'un plant</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/espace-vert-nettoyage-640.webp" srcset="img/espace-vert-nettoyage-640.webp 640w, img/espace-vert-nettoyage-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="477" alt="Désherbage de l&#x27;espace vert" loading="lazy" decoding="async"><figcaption class="cap">Désherbage de l'espace vert</figcaption></figure>
+        <figure data-cat="communaute"><img src="img/atelier-640.webp" srcset="img/atelier-640.webp 640w, img/atelier-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="479" alt="Atelier de travail" loading="lazy" decoding="async"><figcaption class="cap">Atelier de travail</figcaption></figure>
+        <figure data-cat="salubrite"><img src="img/nettoyage-batiment-640.webp" srcset="img/nettoyage-batiment-640.webp 640w, img/nettoyage-batiment-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="481" alt="Lavage d&#x27;une véranda" loading="lazy" decoding="async"><figcaption class="cap">Lavage d'une véranda</figcaption></figure>
+      </div>
+      <button class="btn btn-s more" id="more" type="button">Voir plus de photos</button>
+    </div>
+  </section>
+
+  <section class="block alt" id="transparence">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Transparence</p>
+        <h2>Une association déclarée et redevable</h2>
+        <p>Nous rendons compte de nos actions et de l'usage des dons. Nos comptes rendus d'activité sont disponibles sur demande.</p>
+      </div>
+      <div class="trust">
+        <div class="card">
+          <h3>Statut légal</h3>
+          <dl>
+            <dt>Déclaration</dt><dd>Récépissé n° 151/RDA/D04.01/SAAJP</dd>
+            <dt>Délivré par</dt><dd>Préfecture de la Bénoué, le 9 décembre 2024</dd>
+            <dt>Siège social</dt><dd>Arrondissement de Garoua III</dd>
+            <dt>Adresse du siège</dt><dd>Chefferie traditionnelle de 3e degré de Sanguéré Paul</dd>
+          </dl>
+        </div>
+        <div class="card">
+          <h3>Nos engagements</h3>
+          <ul class="list">
+            <li>Un compte rendu rédigé après chaque action</li>
+            <li>Des dons utilisés pour l'objet annoncé</li>
+            <li>La dignité et la vie privée des bénéficiaires respectées</li>
+            <li>Des financements légaux uniquement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="rejoindre">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Nous rejoindre</p>
+        <h2>Deux heures de ton temps, et ton quartier change</h2>
+        <p>Viens nettoyer, planter ou jouer dans nos films avec nous. Donateurs, entreprises et bailleurs : écrivez-nous pour une rentrée scolaire, un parrainage d'arbres ou le centre de Bockle.</p>
+        <div class="share" aria-label="Partager le site">
+          <a id="share-wa" href="https://wa.me/?text=CADDIH%20%3A%20nous%20sensibilisons%20par%20les%20actes" target="_blank" rel="noopener">Partager sur WhatsApp</a>
+          <a id="share-fb" href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">Partager sur Facebook</a>
+          <button id="copy-link" type="button" aria-live="polite">Copier le lien</button>
+        </div>
+      </div>
+      <div class="ways">
+        <div class="way" id="way-wa" hidden>
+          <div><span>WhatsApp</span><strong id="wa-num"></strong></div>
+          <a class="chip" id="wa-link" href="#" target="_blank" rel="noopener">Écrire</a>
+        </div>
+        <div class="way">
+          <div><span>E-mail</span><strong id="mail">caddih24@gmail.com</strong></div>
+          <button class="chip" id="copy-mail" type="button" aria-live="polite">Copier</button>
+        </div>
+        <div class="way">
+          <div><span>Facebook</span><strong><a href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">facebook.com/caddih.2025</a></strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="fab" href="#rejoindre">Devenir volontaire</a>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 CADDIH · Garoua, Cameroun</span>
+    <span>Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"CADDIH","alternateName":"Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain","email":"caddih24@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Garoua","addressRegion":"Nord","addressCountry":"CM"},"sameAs":["https://www.facebook.com/caddih.2025"]}
+</script>
+<script>
+(function(){
+  /* À compléter : numéro WhatsApp au format international, sans + ni espaces (ex. 2376XXXXXXXX).
+     Adresse publique du site une fois en ligne (ex. https://caddih.org). */
+  var WHATSAPP = "";
+  var SITE_URL = "https://caddih24-code.github.io/Caddih-/";
+
+  var url = SITE_URL || location.href.split('#')[0];
+  var msg = "CADDIH : nous sensibilisons par les actes à Garoua. Découvre et rejoins-nous : " + url;
+  document.getElementById('share-wa').href = "https://wa.me/?text=" + encodeURIComponent(msg);
+  if (/^https?:\/\//.test(url) && SITE_URL) document.getElementById('share-fb').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+  if (WHATSAPP) {
+    var w = document.getElementById('way-wa'); w.hidden = false;
+    document.getElementById('wa-num').textContent = "+" + WHATSAPP;
+    document.getElementById('wa-link').href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour CADDIH, je souhaite devenir volontaire.");
+  }
+
+  /* Menu téléphone */
+  var hdr = document.querySelector('header'), mb = document.getElementById('menu-btn');
+  mb.addEventListener('click', function(){ var o = hdr.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Fermer' : 'Menu'; });
+  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ hdr.classList.remove('open'); mb.setAttribute('aria-expanded','false'); mb.textContent='Menu'; }); });
+
+  /* Galerie : filtres + voir plus */
+  var figs = [].slice.call(document.querySelectorAll('#gal figure')), more = document.getElementById('more'), cur = 'tout', open = false, LIMIT = 8;
+  function render(){
+    var shown = 0, total = 0;
+    figs.forEach(function(f){ var ok = cur === 'tout' || f.dataset.cat === cur; if (ok) total++; var vis = ok && (open || shown < LIMIT); if (vis) shown++; f.hidden = !vis; });
+    more.hidden = open || total <= LIMIT;
+  }
+  document.querySelectorAll('.filters button').forEach(function(b){ b.addEventListener('click', function(){
+    cur = b.dataset.f; open = false;
+    document.querySelectorAll('.filters button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+    render();
+
+  /* Bouton flottant : visible après l'ouverture, caché sur la section Nous rejoindre */
+  var fab=document.querySelector('.fab'), hero=document.querySelector('.hero'), join=document.getElementById('rejoindre');
+  function onScroll(){ var y=window.scrollY, past=y>hero.offsetTop+hero.offsetHeight-80, atJoin=y+window.innerHeight>join.offsetTop+120; fab.classList.toggle('show', past && !atJoin); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  }); });
+  more.addEventListener('click', function(){ open = true; render(); });
+  render();
+
+  /* Bouton flottant : visible après l'ouverture, caché sur la section Nous rejoindre */
+  var fab=document.querySelector('.fab'), hero=document.querySelector('.hero'), join=document.getElementById('rejoindre');
+  function onScroll(){ var y=window.scrollY, past=y>hero.offsetTop+hero.offsetHeight-80, atJoin=y+window.innerHeight>join.offsetTop+120; fab.classList.toggle('show', past && !atJoin); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* Copier */
+  function copy(btn, text, label){
+    function ok(){ btn.textContent = 'Copié'; setTimeout(function(){ btn.textContent = label; }, 1800); }
+    function fail(){ btn.textContent = 'Sélectionnez le texte'; }
+    try { navigator.clipboard.writeText(text).then(ok, fail); } catch(e){ fail(); }
+  }
+  document.getElementById('copy-mail').addEventListener('click', function(){ copy(this, 'caddih24@gmail.com', 'Copier'); });
+  document.getElementById('copy-link').addEventListener('click', function(){ copy(this, url, 'Copier le lien'); });
+})();
+</script>
+
+</body>
+</html>
