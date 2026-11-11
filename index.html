@@ -140,8 +140,22 @@ section.alt{background:var(--surface);border-block:1px solid var(--line)}
 .films .btn-s{border-color:var(--vest);color:var(--vest)}
 @media (max-width:860px){.film-grid{grid-template-columns:1fr}}
 
+/* Soutien scolaire */
+.school-top{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,64px);align-items:end;margin-bottom:34px}
+.school-top>*{min-width:0}
+.school-top .head{margin-bottom:0}
+.kpis{display:flex;gap:clamp(24px,4vw,48px)}
+.kpis b{display:block;font:800 clamp(2.6rem,6vw,4rem)/1 var(--display);font-stretch:112%;color:var(--blue);font-variant-numeric:tabular-nums}
+.kpis small{display:block;margin-top:8px;color:var(--muted);font-size:.95rem;line-height:1.35}
+.school-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.school-grid figure{margin:0;min-width:0}
+.school-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.school-note{margin-top:22px;max-width:44em}
+@media (max-width:860px){.school-top{grid-template-columns:1fr}}
+@media (max-width:700px){.school-grid{grid-template-columns:1fr 1fr}}
+
 /* Autres actions */
-.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.axes{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
 .axe{display:grid;gap:12px;align-content:start;min-width:0}
 .axe img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
 .axe .k{font:700 .75rem var(--display);font-stretch:100%;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -226,7 +240,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <nav id="menu" aria-label="Navigation principale">
       <a href="#actes">Par les actes</a>
       <a href="#films">Courts métrages</a>
-      <a href="#actions">Nos actions</a>
+      <a href="#ecole">Soutien scolaire</a>
+      <a href="#actions">Reboisement et santé</a>
       <a href="#bockle">Centre de Bockle</a>
       <a href="#galerie">Photos</a>
       <a class="nav-cta" href="#rejoindre">Nous rejoindre</a>
@@ -306,7 +321,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <li><span class="n">3</span><h3>L'insalubrité</h3><p>Relier les déchets dans la rue aux maladies et à la dignité du quartier.</p></li>
           </ul>
           <p class="note">D'autres thèmes suivront. Les films seront diffusés sur notre chaîne YouTube et sur notre page Facebook.</p>
-          <div class="btns"><a class="btn btn-s" href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">Voir nos vidéos sur Facebook</a></div>
+          <div class="btns"><a class="btn btn-s" href="https://www.facebook.com/profile.php?id=61571437178495" target="_blank" rel="noopener">Voir nos vidéos sur Facebook</a></div>
         </div>
         <div class="shoot">
           <figure><img src="img/tournage-marche-640.webp" srcset="img/tournage-marche-640.webp 640w, img/tournage-marche-1200.webp 1200w" sizes="(max-width:860px) 50vw, 300px" width="480" height="640" alt="Tournage d&#x27;un court métrage de CADDIH au marché, caméra sur stabilisateur" loading="lazy" decoding="async"></figure>
@@ -317,24 +332,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
+  <section class="block alt" id="ecole">
+    <div class="wrap">
+      <div class="school-top">
+        <div class="head">
+          <p class="eyebrow">Éducation</p>
+          <h2>Soutien scolaire aux élèves vulnérables</h2>
+          <p>Chaque rentrée, nos volontaires apportent cahiers, stylos, crayons et ardoises aux élèves dont les familles ne peuvent pas les acheter. Ils chargent les cartons sur des motos et remettent eux-mêmes les fournitures dans les écoles, comme à l'école publique de Babla.</p>
+        </div>
+        <div class="kpis" aria-label="Élèves équipés par rentrée">
+          <div><b>93</b><small>élèves équipés<br>rentrée 2025</small></div>
+          <div><b>207</b><small>élèves équipés<br>rentrée 2026</small></div>
+        </div>
+      </div>
+      <div class="school-grid">
+        <figure><img src="img/ecole-transport-640.webp" srcset="img/ecole-transport-640.webp 640w, img/ecole-transport-1200.webp 1200w" sizes="(max-width:700px) 50vw, 270px" width="640" height="480" alt="Deux motos chargées de cartons de fournitures, conduites par des volontaires en gilet" loading="lazy" decoding="async"><figcaption class="cap">Les fournitures partent à moto</figcaption></figure>
+        <figure><img src="img/ecole-babla-640.webp" srcset="img/ecole-babla-640.webp 640w, img/ecole-babla-1200.webp 1200w" sizes="(max-width:700px) 50vw, 270px" width="640" height="480" alt="Les volontaires préparent cahiers et crayons devant le panneau de l&#x27;école publique de Babla" loading="lazy" decoding="async"><figcaption class="cap">À l'école publique de Babla</figcaption></figure>
+        <figure><img src="img/ecole-preparation-640.webp" srcset="img/ecole-preparation-640.webp 640w, img/ecole-preparation-1200.webp 1200w" sizes="(max-width:700px) 50vw, 270px" width="640" height="480" alt="Trois volontaires trient cahiers et stylos sur une table sous les arbres" loading="lazy" decoding="async"><figcaption class="cap">La préparation des lots</figcaption></figure>
+        <figure><img src="img/ecole-remise-640.webp" srcset="img/ecole-remise-640.webp 640w, img/ecole-remise-1200.webp 1200w" sizes="(max-width:700px) 50vw, 270px" width="640" height="480" alt="Un volontaire remet des cahiers et des stylos à une élève" loading="lazy" decoding="async"><figcaption class="cap">La remise à chaque élève</figcaption></figure>
+      </div>
+      <p class="muted school-note">Nous voulons faire mieux à la prochaine rentrée. Un don de fournitures ou un parrainage d'école nous y aide.</p>
+    </div>
+  </section>
+
   <section class="block" id="actions">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Nos autres actions</p>
-        <h2>Éduquer, reboiser, soigner la communauté</h2>
+        <h2>Reboiser et soigner la communauté</h2>
       </div>
       <div class="axes">
-        <article class="axe">
-          <img src="img/dons-ecole-640.webp" srcset="img/dons-ecole-640.webp 640w, img/dons-ecole-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="480" alt="Remise de kits scolaires à des élèves dans une cour d&#x27;école" loading="lazy" decoding="async">
-          <span class="k">Éducation</span>
-          <h3>Fournitures pour les élèves vulnérables</h3>
-          <p>Chaque rentrée, nous remettons cartables et fournitures aux élèves qui en ont le plus besoin : 93 en 2025, 207 en 2026. Nous visons plus haut l'an prochain.</p>
-        </article>
         <article class="axe">
           <img src="img/pepiniere-jeunes-640.webp" srcset="img/pepiniere-jeunes-640.webp 640w, img/pepiniere-jeunes-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="360" alt="Des jeunes volontaires remplissent des sachets de terre pour la pépinière" loading="lazy" decoding="async">
           <span class="k">Climat</span>
           <h3>De la pépinière à la colline</h3>
-          <p>Nos volontaires préparent les plants, les remettent aux familles et les mettent en terre sur les terrains dégradés. Les parrainages d'arbres permettent d'étendre chaque campagne.</p>
+          <p>Nos volontaires préparent les plants, les remettent aux familles et les mettent en terre sur les terrains dégradés. La campagne 2026 s'est achevée avec les enfants de l'école coranique, sur le terrain de la grande mosquée. Les parrainages d'arbres permettent d'étendre chaque campagne.</p>
         </article>
         <article class="axe">
           <img src="img/sensibilisation-babla-640.webp" srcset="img/sensibilisation-babla-640.webp 640w, img/sensibilisation-babla-1200.webp 1200w" sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, 360px" width="640" height="360" alt="Causerie éducative de CADDIH au centre de santé intégré de Babla" loading="lazy" decoding="async">
@@ -404,6 +436,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <button type="button" id="f-communaute" data-f="communaute" aria-pressed="false">Communauté</button>
       </div>
       <div class="gal" id="gal">
+        <figure data-cat="climat"><img src="img/reboisement-trio-640.webp" srcset="img/reboisement-trio-640.webp 640w, img/reboisement-trio-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Campagne de reboisement 2026" loading="lazy" decoding="async"><figcaption class="cap">Campagne de reboisement 2026</figcaption></figure>
         <figure data-cat="climat"><img src="img/plantation-paysage-640.webp" srcset="img/plantation-paysage-640.webp 640w, img/plantation-paysage-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Plantation face aux collines de la Bénoué" loading="lazy" decoding="async"><figcaption class="cap">Plantation face aux collines de la Bénoué</figcaption></figure>
         <figure data-cat="salubrite"><img src="img/marche-tas-640.webp" srcset="img/marche-tas-640.webp 640w, img/marche-tas-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="479" alt="Ramassage des déchets au marché" loading="lazy" decoding="async"><figcaption class="cap">Ramassage des déchets au marché</figcaption></figure>
         <figure data-cat="communaute"><img src="img/causerie-sante-640.webp" srcset="img/causerie-sante-640.webp 640w, img/causerie-sante-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Causerie santé avec les femmes" loading="lazy" decoding="async"><figcaption class="cap">Causerie santé avec les femmes</figcaption></figure>
@@ -413,6 +446,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <figure data-cat="climat"><img src="img/plantation-portrait-640.webp" srcset="img/plantation-portrait-640.webp 640w, img/plantation-portrait-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="360" height="640" alt="Mise en terre sur les collines" loading="lazy" decoding="async"><figcaption class="cap">Mise en terre sur les collines</figcaption></figure>
         <figure data-cat="salubrite"><img src="img/brouette-640.webp" srcset="img/brouette-640.webp 640w, img/brouette-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="480" height="640" alt="Évacuation des déchets" loading="lazy" decoding="async"><figcaption class="cap">Évacuation des déchets</figcaption></figure>
         <figure data-cat="communaute"><img src="img/sensibilisation-micro-640.webp" srcset="img/sensibilisation-micro-640.webp 640w, img/sensibilisation-micro-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Prise de parole devant la communauté" loading="lazy" decoding="async"><figcaption class="cap">Prise de parole devant la communauté</figcaption></figure>
+        <figure data-cat="climat"><img src="img/reboisement-plaine-640.webp" srcset="img/reboisement-plaine-640.webp 640w, img/reboisement-plaine-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Entretien des jeunes plants" loading="lazy" decoding="async"><figcaption class="cap">Entretien des jeunes plants</figcaption></figure>
+        <figure data-cat="climat"><img src="img/reboisement-motte-640.webp" srcset="img/reboisement-motte-640.webp 640w, img/reboisement-motte-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="360" height="640" alt="Un plant prêt à être mis en terre" loading="lazy" decoding="async"><figcaption class="cap">Un plant prêt à être mis en terre</figcaption></figure>
         <figure data-cat="climat"><img src="img/pepiniere-sachets-640.webp" srcset="img/pepiniere-sachets-640.webp 640w, img/pepiniere-sachets-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Préparation de la pépinière" loading="lazy" decoding="async"><figcaption class="cap">Préparation de la pépinière</figcaption></figure>
         <figure data-cat="salubrite"><img src="img/equipe-marche-640.webp" srcset="img/equipe-marche-640.webp 640w, img/equipe-marche-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="480" alt="Journée de propreté au marché" loading="lazy" decoding="async"><figcaption class="cap">Journée de propreté au marché</figcaption></figure>
         <figure data-cat="climat"><img src="img/plantation-plant-640.webp" srcset="img/plantation-plant-640.webp 640w, img/plantation-plant-1200.webp 1200w" sizes="(max-width:560px) 50vw, (max-width:900px) 33vw, 270px" width="640" height="360" alt="Planter avec les plus jeunes" loading="lazy" decoding="async"><figcaption class="cap">Planter avec les plus jeunes</figcaption></figure>
@@ -468,7 +503,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>Viens nettoyer, planter ou jouer dans nos films avec nous. Donateurs, entreprises et bailleurs : écrivez-nous pour une rentrée scolaire, un parrainage d'arbres ou le centre de Bockle.</p>
         <div class="share" aria-label="Partager le site">
           <a id="share-wa" href="https://wa.me/?text=CADDIH%20%3A%20nous%20sensibilisons%20par%20les%20actes" target="_blank" rel="noopener">Partager sur WhatsApp</a>
-          <a id="share-fb" href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">Partager sur Facebook</a>
+          <a id="share-fb" href="https://www.facebook.com/profile.php?id=61571437178495" target="_blank" rel="noopener">Partager sur Facebook</a>
           <button id="copy-link" type="button" aria-live="polite">Copier le lien</button>
         </div>
       </div>
@@ -482,7 +517,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <button class="chip" id="copy-mail" type="button" aria-live="polite">Copier</button>
         </div>
         <div class="way">
-          <div><span>Facebook</span><strong><a href="https://www.facebook.com/caddih.2025" target="_blank" rel="noopener">facebook.com/caddih.2025</a></strong></div>
+          <div><span>Facebook</span><strong><a href="https://www.facebook.com/profile.php?id=61571437178495" target="_blank" rel="noopener">Page Facebook de CADDIH</a></strong></div>
         </div>
       </div>
     </div>
@@ -499,7 +534,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </footer>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"CADDIH","alternateName":"Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain","email":"caddih24@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Garoua","addressRegion":"Nord","addressCountry":"CM"},"sameAs":["https://www.facebook.com/caddih.2025"]}
+{"@context":"https://schema.org","@type":"NGO","name":"CADDIH","alternateName":"Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain","email":"caddih24@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Garoua","addressRegion":"Nord","addressCountry":"CM"},"sameAs":["https://www.facebook.com/profile.php?id=61571437178495"]}
 </script>
 <script>
 (function(){
