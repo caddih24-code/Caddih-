@@ -59,12 +59,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .bar .brand img{height:30px;width:auto}
-nav{display:flex;align-items:center;gap:20px;font-weight:600;font-size:.96rem}
+nav{display:flex;align-items:center;gap:16px;font-weight:600;font-size:.93rem}
 nav a{color:var(--ink);text-decoration:none}
 nav a:hover{color:var(--blue-ink)}
 .nav-cta{background:var(--blue);color:#fff!important;padding:8px 14px;border-radius:var(--r)}
 .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:8px 12px;font:600 .95rem var(--body);cursor:pointer}
-@media (max-width:860px){
+@media (max-width:1180px){
   .menu-btn{display:inline-flex;align-items:center;gap:8px}
   nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);
       padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 16px}
@@ -182,6 +182,23 @@ section.alt{background:var(--surface);border-block:1px solid var(--line)}
 @media (max-width:860px){.bk-top{grid-template-columns:1fr}.views{grid-template-columns:1fr 1fr}.views figure:last-child{display:none}}
 @media (max-width:480px){.blocks{grid-template-columns:1fr 1fr}}
 
+/* Soutenir */
+.ways4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ways4 article{border-top:4px solid var(--blue);padding-top:16px;min-width:0;display:grid;gap:8px;align-content:start}
+.ways4 p{color:var(--muted)}
+.pledge{margin-top:36px;display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(16px,4vw,48px);padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.pledge>*{min-width:0}
+.pledge .list{margin-top:0}
+@media (max-width:900px){.ways4{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.pledge{grid-template-columns:1fr}}
+@media (max-width:520px){.ways4{grid-template-columns:1fr}}
+/* Affiches */
+.posters{display:grid;grid-template-columns:repeat(2,minmax(0,420px));gap:24px}
+.posters figure{margin:0}
+.posters img{width:100%;border-radius:var(--r)}
+@media (max-width:640px){.posters{grid-template-columns:1fr}}
+.en-text{max-width:46em;display:grid;gap:14px}
+
 /* Galerie */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .filters button{font:600 .95rem var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
@@ -243,7 +260,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a href="#ecole">Soutien scolaire</a>
       <a href="#actions">Reboisement et santé</a>
       <a href="#bockle">Centre de Bockle</a>
+      <a href="#soutenir">Soutenir</a>
       <a href="#galerie">Photos</a>
+      <a href="#english" lang="en">English</a>
       <a class="nav-cta" href="#rejoindre">Nous rejoindre</a>
     </nav>
   </div>
@@ -423,6 +442,45 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
+  <section class="block" id="soutenir">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Soutenir CADDIH</p>
+        <h2>Quatre façons d'agir avec nous</h2>
+        <p>Philanthropes, entreprises, fondations, institutions, diaspora : chaque appui se transforme en action visible sur le terrain, et vous en recevez la preuve.</p>
+      </div>
+      <div class="ways4">
+        <article><h3>Parrainer une rentrée scolaire</h3><p>Vous financez ou offrez des lots de fournitures. Nos volontaires les remettent dans les écoles et vous recevez la liste des écoles servies, le nombre d'élèves et les photos.</p></article>
+        <article><h3>Parrainer des arbres</h3><p>Plants, sachets, outils et suivi. Nous vous indiquons le lieu de plantation et vous donnons des nouvelles des plants après la saison des pluies.</p></article>
+        <article><h3>Bâtir le centre de Bockle</h3><p>Un bâtiment, un équipement ou un lot de travaux. Le plan de masse et le descriptif sont prêts. Le dossier du projet est envoyé sur demande.</p></article>
+        <article><h3>Offrir du matériel ou un savoir-faire</h3><p>Brouettes, râteaux, gants, matériel de tournage, ordinateurs. Ou vos compétences : comptabilité, droit, santé, bâtiment, communication.</p></article>
+      </div>
+      <div class="pledge">
+        <h3>Ce que nous garantissons à chaque partenaire</h3>
+        <ul class="list">
+          <li>Un accord écrit qui précise l'objet de votre appui</li>
+          <li>Un compte rendu avec photos et justificatifs après l'action</li>
+          <li>Un interlocuteur unique : le coordonnateur de l'association</li>
+          <li>La visibilité que vous souhaitez, ou la discrétion si vous la préférez</li>
+        </ul>
+      </div>
+      <div class="btns"><a class="btn btn-p" href="#rejoindre">Écrire à CADDIH</a></div>
+    </div>
+  </section>
+
+  <section class="block alt" id="infos">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">CADDIH infos</p>
+        <h2>Les bilans de nos campagnes 2026</h2>
+      </div>
+      <div class="posters">
+        <figure><img src="img/affiche-reboisement-2026-640.webp" srcset="img/affiche-reboisement-2026-640.webp 640w, img/affiche-reboisement-2026-1080.webp 1080w" sizes="(max-width:640px) 100vw, 420px" width="640" height="800" alt="Affiche CADDIH infos : fin de la campagne de reboisement 2026, avec les enfants de l'école coranique, sur le terrain de la grande mosquée" loading="lazy" decoding="async"></figure>
+        <figure><img src="img/affiche-soutien-scolaire-2026-640.webp" srcset="img/affiche-soutien-scolaire-2026-640.webp 640w, img/affiche-soutien-scolaire-2026-1080.webp 1080w" sizes="(max-width:640px) 100vw, 420px" width="640" height="800" alt="Affiche CADDIH infos : 207 élèves vulnérables équipés pour la rentrée 2026, contre 93 en 2025" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="galerie">
     <div class="wrap">
       <div class="head">
@@ -491,6 +549,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <li>Des financements légaux uniquement</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="english" lang="en">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">In English</p>
+        <h2>CADDIH in brief</h2>
+      </div>
+      <div class="en-text">
+        <p>CADDIH (Cœur d'Appui pour le Développement, la Dignité et l'Intégrité de l'Humain) is a volunteer association based in Garoua, North Region, Cameroon. It was registered with the Bénoué Prefecture on 9 December 2024 (receipt No. 151/RDA/D04.01/SAAJP).</p>
+        <p>Our motto is to raise awareness through action. Our volunteers:</p>
+        <ul class="list">
+          <li>give school supplies to vulnerable pupils: 93 in 2025, 207 in 2026</li>
+          <li>plant trees on degraded land with local families and schoolchildren</li>
+          <li>clean markets, public buildings, health centres and streets</li>
+          <li>shoot short awareness films on drug addiction, reforestation and sanitation</li>
+        </ul>
+        <p><strong>Flagship project:</strong> a shelter and training centre in Bockle for vulnerable young mothers, women survivors of violence, widows and women living with illness or disability. The 6,750 m² site plan and building list are ready. We are looking for partners to build it.</p>
+        <p>Contact: <strong>caddih24@gmail.com</strong>. We reply in French or English and send the project file on request.</p>
       </div>
     </div>
   </section>
